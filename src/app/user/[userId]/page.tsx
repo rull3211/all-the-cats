@@ -1,4 +1,4 @@
-import UserProfile from "@/src/features/userProfile/components/userProfile";
+import UserProfile from "@/src/features/userProfile/components/UserProfile";
 import { getCatsByUserId } from "@/src/server/repos/cats.repo";
 
 export default async function Page({ params }: { params: { userId: string } }) {
