@@ -1,4 +1,4 @@
-import MyCats from "./MyCats";
+import MyCats from "./a";
 import type { Cat } from "@/src/features/cats/types/Cat";
 
 export default async function UserProfile({
