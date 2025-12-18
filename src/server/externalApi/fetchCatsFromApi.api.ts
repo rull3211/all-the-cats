@@ -10,9 +10,7 @@ export async function fetchCats({ limit = 8 }: FetchCatsParams = {}): Promise<
 > {
   const res = await fetch(
     `https://api.thecatapi.com/v1/images/search?limit=${limit}`,
-    {
-      cache: "no-store", // ISR caching in Next.js
-    }
+    { next: { revalidate: 20 } }
   );
 
   if (!res.ok) {

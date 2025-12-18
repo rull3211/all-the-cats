@@ -1,4 +1,4 @@
-import UserProfile from "@/src/features/userProfile/components/b";
+import UserProfile from "@/src/features/userProfile/components/UserProfile";
 import { getCatsByUserId } from "@/src/server/repos/cats.repo";
 import { Metadata } from "next";
 

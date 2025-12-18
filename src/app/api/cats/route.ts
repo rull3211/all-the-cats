@@ -1,12 +1,11 @@
 import { fetchCats } from "@/src/server/externalApi/fetchCatsFromApi.api";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-// Optional: allow GET to list favorites for a user
-export async function GET(
-  _request: Request,
-  { params }: { params: { limit: number } }
-) {
-  const limit = params.limit;
+export async function GET(request: NextRequest): Promise<NextResponse> {
+  const url = new URL(request.url);
+  const limitParam = url.searchParams.get("limit");
+  const limit = limitParam ? parseInt(limitParam) : 10; // default to 10
+
   const list = await fetchCats({ limit });
   return NextResponse.json({ ok: true, favorites: list });
 }
